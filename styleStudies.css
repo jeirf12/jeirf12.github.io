@@ -1,5 +1,5 @@
 table {
-	margin: 60px auto;
+	margin: 20px auto;
 	text-align: center;
 	table-layout: fixed;
 }
@@ -24,5 +24,5 @@ tr:hover {
 
 caption {
 	font-size: 1.7em;
-	margin: 2px;
+	font-weight: bold;
 }
