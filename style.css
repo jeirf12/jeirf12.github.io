@@ -1,97 +1,102 @@
 * {
-	margin: 0px;
-	padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-	background: #ece2c6;
+  background: #ece2c6;
 }
 
 header {
-	float: left;
-	height: 120px;
-	width: 50%;
-	background: #333;
-	line-height: 120px;
-	text-align: center;
-	margin: 0px;
-	color: #c0c0c0;
+  float: left;
+  height: 120px;
+  width: 50%;
+  background: #333;
+  line-height: 120px;
+  text-align: center;
+  margin: 0px;
+  color: #c0c0c0;
 }
 
 header h3 {
-	font-size: 1.7em;
-	padding: 0px 150px 0px 0px;
+  font-size: 1.7em;
+  padding: 0px 150px 0px 0px;
 }
 
 nav ul li {
-	float: left;
-	color: #ffbf5e;
-	margin: 10px;
-	line-height: 110px;
-	font-size: 1em;
-	padding: 0px 0px 0px 30px;
+  float: left;
+  color: #ffbf5e;
+  margin: 10px;
+  line-height: 110px;
+  font-size: 1em;
+  padding: 0px 0px 0px 30px;
 }
 
 li {
-	list-style: none;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
-	color: #c0c0c0;
+  text-decoration: none;
+  color: #c0c0c0;
 }
 
 nav {
-	float: left;
-	height: 120px;
-	width: 50%;
-	background: #333;
-	line-height: 140px;
-	margin: 0;
+  float: left;
+  height: 120px;
+  width: 50%;
+  background: #333;
+  line-height: 140px;
+  margin: 0;
 }
 
 nav a {
-	padding: 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem;
 }
 
-nav a:hover{
-	background: #908c38;
-	border-radius: 15px;
+nav a:hover {
+  background: #908c38;
+  border-radius: 15px;
 }
 
 .sort {
-	clear: both;
+  clear: both;
 }
 
-section.video{
-	margin: 2% 30% 0% 20%;
+section.video {
+  margin: 2% 30% 0% 20%;
 }
 
 section h3 {
-	font-size: 1.7em;
-	text-align: center;
+  font-size: 1.7em;
+  text-align: center;
+}
+
+section iframe {
+  border-radius: 15px;
 }
 
 footer {
-	display: flex;
+  display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding-top: 2rem;
   font-size: 60px;
 }
 
-footer a{
-	text-decoration: none;
+footer a {
+  text-decoration: none;
   color: #4f614f;
   transition: transform 0.5s;
 }
 
-footer i{
-	color: #4f614f;
+footer i {
+  color: #4f614f;
   cursor: pointer;
   transition: transform 0.5s;
 }
 
-footer a:hover, i:hover {
-	transform: translateY(-1rem);
+footer a:hover,
+i:hover {
+  transform: translateY(-1rem);
 }
