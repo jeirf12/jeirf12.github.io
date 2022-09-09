@@ -137,3 +137,6 @@ footer.appendChild(aInstagram);
 footer.appendChild(aGithub);
 footer.appendChild(iRobot);
 document.body.appendChild(footer);
+
+// Load events click contact form
+document.getElementById("bottom")?loadClickEvent(document.getElementById("bottom"), () => {window.event.preventDefault(); alert("Mensaje Enviado");}):"";
