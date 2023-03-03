@@ -85,19 +85,32 @@ footer {
   font-size: 60px;
 }
 
-footer a {
+footer a, footer i {
   text-decoration: none;
   color: #4f614f;
   transition: transform 0.5s;
 }
 
 footer i {
-  color: #4f614f;
   cursor: pointer;
-  transition: transform 0.5s;
 }
 
 footer a:hover,
 i:hover {
   transform: translateY(-1rem);
+}
+
+.facebook {
+  color: #0A82ED !important;
+}
+
+.instagram {
+  color: #ffffff !important;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  border-radius: 20px;
+}
+.github {
+  color: #ffffff !important;
+  background: #000000;
+  border-radius: 50%;
 }
