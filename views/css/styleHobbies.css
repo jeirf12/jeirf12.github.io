@@ -9,7 +9,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: calc(400px + 5em);
+  height: calc(325px + 3em);
 }
 
 .slide-open:checked + .slide-item {
@@ -28,6 +28,8 @@
   display: block;
   height: auto;
   max-width: 100%;
+  max-height: 280px;
+  padding-top: 2%;
 }
 
 .slide-control {
@@ -116,12 +118,6 @@ figure {
   padding: 5px;
   max-width: 100%;
   margin: auto;
-}
-
-.slide-item img {
-  max-width: 100%;
-  max-height: 280px;
-  padding-top: 2%;
 }
 
 figcaption {
