@@ -23,29 +23,29 @@ const fileName = () => {
   return pathPageEnd;
 }
 
-const createHead = (props) => {
+const createHead = ({ title, styles, icon }) => {
   let namePage = fileName();
   let meta = document.createElement("meta");
   meta.setAttribute("charset", "UTF-8");
   let titleWeb = document.createElement("title");
-  titleWeb.textContent = props.title[namePage];
-  let styles = [];
-  props.styles[namePage].forEach((element) => {
+  titleWeb.textContent = title[namePage];
+  let stylesHead = [];
+  styles[namePage].forEach((element) => {
     let style = document.createElement("link");
     style.setAttribute("rel", "stylesheet");
     style.setAttribute("type", "text/css");
     style.setAttribute("href", element);
-    styles.push(style);
+    stylesHead.push(style);
   })
   let styleIcon = document.createElement("link");
   styleIcon.setAttribute("rel", "stylesheet");
   styleIcon.setAttribute("href", "https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css");
-  styles.push(styleIcon);
-  let icon = document.createElement("link");
-  icon.setAttribute("rel", "shortcut icon");
-  icon.setAttribute("type", "image/x-icon");
-  icon.setAttribute("href", props.icon[namePage]);
-  return { meta, titleWeb, styles, icon };
+  stylesHead.push(styleIcon);
+  let iconHead = document.createElement("link");
+  iconHead.setAttribute("rel", "shortcut icon");
+  iconHead.setAttribute("type", "image/x-icon");
+  iconHead.setAttribute("href", icon[namePage]);
+  return { meta, titleWeb, stylesHead, iconHead };
 }
 
 // Functions Events
@@ -87,12 +87,11 @@ const createUnorderedListElements = (array) => {
 
 // create elements
 // ---- head ----
-let { meta, titleWeb, styles, icon } = createHead(informationPage);
+let { meta, titleWeb, stylesHead, iconHead } = createHead(informationPage);
 
 // ---  navigation ---
-let sort = document.createElement("div");
-sort.setAttribute("class", "sort");
-let header = document.createElement("header");
+let header = document.createElement("div");
+header.setAttribute("class", "header")
 let h3 = document.createElement("h3");
 let a = document.createElement("a");
 let nameWelcome = "Welcome to my page";
@@ -124,8 +123,8 @@ loadMouseLeaveEvent(aGithub, toggleClassname, { element: aGithub, id: "github" }
 // ---  head ---
 document.head.appendChild(meta);
 document.head.appendChild(titleWeb);
-styles.forEach((style) => document.head.appendChild(style));
-document.head.appendChild(icon);
+stylesHead.forEach((style) => document.head.appendChild(style));
+document.head.appendChild(iconHead);
 
 // Joining elements body
 // ---  navigation ---
@@ -133,17 +132,18 @@ loadClickEvent(a, openLink, path[nameWelcome]);
 h3.appendChild(a);
 header.appendChild(h3);
 nav.appendChild(ul);
-let secondSort = document.getElementById("second-sort");
-document.body.insertBefore(sort, secondSort);
-document.body.insertBefore(header, secondSort);
-document.body.insertBefore(nav, secondSort);
+header.appendChild(nav)
+let firstChild = document.body.children[0];
+document.body.insertBefore(header, firstChild);
 
 // ---  footer ---
 footer.appendChild(aFacebook);
 footer.appendChild(aInstagram);
 footer.appendChild(aGithub);
 footer.appendChild(iRobot);
-document.body.appendChild(footer);
+// TODO: Search the form get last child genericly
+let lastChild = firstChild;
+document.body.insertBefore(footer, lastChild.nextSibling);
 
 // Load events click contact form
 document.getElementById("bottom") ? loadClickEvent(document.getElementById("bottom"), () => { window.event.preventDefault(); alert("Mensaje Enviado"); }) : "";
