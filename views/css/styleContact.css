@@ -27,7 +27,8 @@ input, textarea {
 	padding-left: 10px;
 	padding-right: 10px;
 	line-height: 30px;
-	outline: none;
+	border: none;
+	outline-color: rgba(30, 134, 192, .7);
 }
 
 input::placeholder, textarea::placeholder {
